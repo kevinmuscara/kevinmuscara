@@ -10,7 +10,7 @@ const router = require('./routes/routes');
 const api = require('./routes/api/api');
 
 const app  = express();
-const port = 801;
+const port = 80;
 
 require('./discord');
 
