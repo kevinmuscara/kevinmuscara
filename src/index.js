@@ -4,6 +4,7 @@ const path       = require('path');
 
 const Logger = require('./log/logger');
 const logger = new Logger('./log/logs.txt');
+
 const router = require('./routes/routes');
 
 const api = require('./routes/api/api');
