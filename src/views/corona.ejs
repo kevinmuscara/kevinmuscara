@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KY Corona</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+        </style>
+        <style>
+            div.spacer
+            {
+                font-size: 0;
+                height: 300px;
+                line-height: 0;
+            }
+        </style>
+    </head>
+<body class="">
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="spacer"></div>
+    <div class="w3-quarter">
+        <div class="w3-container w3-teal w3-padding-16">
+          <div class="w3-clear"></div>
+          <h1>Total Confirmed Cases</h1>
+          <div class="w3-left">
+              <h1><%= positive %></h1>
+            </div>
+        </div>
+      </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-clear"></div>
+        <h1>Confirmed Total Deaths</h1>
+        <div class="w3-left">
+            <h1><%= deaths %></h1>
+        </div>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-clear"></div>
+        <h1>Confirmed Total Tests</h1>
+        <div class="w3-left">
+            <h1><%= tested %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

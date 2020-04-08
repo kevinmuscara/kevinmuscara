@@ -1,2 +1,3 @@
- Started on Tue Apr 07 2020 18:14:17 GMT-0400 (Eastern Daylight Time)
-[18:14:17] PASS http://localhost:8080
+ Started on Wed Apr 08 2020 01:35:51 GMT-0400 (Eastern Daylight Time)
+[01:35:51] PASS online
+[01:45:06] SERVER (Devcord) (welcome) (jayce): 

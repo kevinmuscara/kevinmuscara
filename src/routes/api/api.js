@@ -19,6 +19,22 @@ router.get('/bans', async(req, res) => {
     });
 });
 
+router.get('/corona', async(req, res) => {
+    request.get(`http://coronavirusapi.com/getTimeSeriesJson/KY/`, function(error, response, body) {
+        const data = JSON.parse(body);
+
+        const deaths   = data[data.length - 1].deaths;
+        const positive = data[data.length - 1].positive;
+        const tested   = data[data.length - 1].tested;
+
+        res.json({ 
+            "confirmedCases": positive,
+            "totalTested": tested,
+            "totalDeaths": deaths 
+        });
+    });
+})
+
 router.get('/health', async(req, res) => {
     String.prototype.toHHMMSS = function() {
         var second_number = parseInt(this, 10);
