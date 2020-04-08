@@ -13,6 +13,16 @@ class Logger {
             });
         }
     }
+
+    chat(message, h = 'DM') {
+        console.log(`${getTime()} ${chalk.bgGreen.black(` ${h} `)} ${message}`);
+        if(this.file) {
+            fs.appendFile(this.file, '\n' + `${getTime()} ${h} ${message}`, function(error) {
+                if(error)
+                    throw error;
+            });
+        }
+    }
     
     pass(message, h = 'PASS') {
         console.log(`${getTime()} ${chalk.bgGreen.black(` ${h} `)} ${message}`);

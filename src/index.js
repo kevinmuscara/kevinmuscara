@@ -6,8 +6,12 @@ const Logger = require('./log/logger');
 const logger = new Logger('./log/logs.txt');
 const router = require('./routes/routes');
 
+const api = require('./routes/api/api');
+
 const app  = express();
-const port = 80;
+const port = 8000;
+
+require('./discord');
 
 app
 .set('views', path.join(__dirname, 'views'))
@@ -15,7 +19,8 @@ app
 .use(bodyParser.json())
 .use(bodyParser.urlencoded({ extended : true }))
 .use('/', express.static(path.join(__dirname, './views')))
-.use('/', router);
+.use('/', router)
+.use('/api', api);
 
 const server = app.listen(port, '0.0.0.0', () => {
     logger.pass(`online`);
