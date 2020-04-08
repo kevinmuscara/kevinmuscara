@@ -1,36 +1,5 @@
- Started on Wed Apr 08 2020 03:33:46 GMT-0400 (Eastern Daylight Time)
-[03:33:46] PASS online
-[03:34:23] SERVER (Devcord) (help-javascript) (James T): <@!264127761923178497> does that make a bit of sense?
-[03:34:27] SERVER (Devcord) (help-javascript) (MWR): Hm?
-[03:34:51] SERVER (Devcord) (help-javascript) (MWR): I thought that destructuring assignment only renames variable `b` to `delta`
-[03:35:02] SERVER (Devcord) (welcome) (Junior): 
-[03:35:03] SERVER (Devcord) (help-javascript) (MWR): Not that it pulls the property delta of b
-[03:35:10] SERVER (Devcord) (help-javascript) (James T): yeah it does, very cool right
-[03:35:39] SERVER (Devcord) (help-javascript) (James T): actually I think my syntax is off there
-[03:35:44] SERVER (Devcord) (help-javascript) (MWR): So then i think it can differentiate whether you are looking to extract a property of another property of an object, or to just rename it?
-[03:35:44] SERVER (Devcord) (help-javascript) (bato1359): > And also, apparently, `const { body: variable } = object` pulls the property `body` from `object`, and renames the variable itself `body` to `variable`
-<@!214807903129960448> Yeah this is what i was assuming that it does
-[03:36:00] SERVER (Devcord) (help-javascript) (bato1359): const {body} = object does remove body from the object
-[03:36:06] SERVER (Devcord) (help-javascript) (bato1359): in this case the object is a JSON object
-[03:36:21] SERVER (Devcord) (help-javascript) (MWR): It doesn't "remove it" per se, it just pulls it into another variable
-[03:36:27] SERVER (Devcord) (help-javascript) (bato1359): yeah
-[03:36:33] SERVER (Devcord) (help-javascript) (James T): https://cdn.discordapp.com/attachments/621385120229621821/697349139465502740/Screen_Shot_2020-04-08_at_5.36.27_pm.png
-[03:36:42] SERVER (Devcord) (help-javascript) (MWR): Yeah that's what I thought  <@210208307573555201>
-[03:36:46] SERVER (Devcord) (help-javascript) (James T): sorry was missing the braces yeah my bad
-[03:36:52] SERVER (Devcord) (help-javascript) (James T): should always do this in the console instead of trying to type it up...
-[03:37:14] SERVER (Devcord) (help-javascript) (bato1359): > <@!264127761923178497> does that make a bit of sense?
-<@!210208307573555201> oh ok yeah that makes sense
-[03:37:24] SERVER (Devcord) (help-javascript) (bato1359): i thought it was just a way of renaming what you are pulling from the object
-[03:38:00] SERVER (Devcord) (help-javascript) (bato1359): thanks for the clarification
-[03:38:04] SERVER (Devcord) (help-javascript) (James T): I've used it a couple of times in React when i pass a giant object as props to a child component but only need one part of that object in that component
-[03:38:18] SERVER (Devcord) (help-javascript) (bato1359): basically im trying to remove data from a json object
-[03:38:27] SERVER (Devcord) (help-javascript) (James T): you want to *delete* the data?
-[03:38:37] SERVER (Devcord) (help-javascript) (James T): or reassign it to a new variable for use
-[03:38:49] SERVER (Devcord) (help-javascript) (bato1359): rn im just logging it
-[03:39:22] SERVER (Devcord) (help-javascript) (James T): yeah cool so this is an alternative to doing `object.key.otherKey.thirdKey`
-[03:40:24] SERVER (Devcord) (help-javascript) (bato1359): ohk
-[03:40:37] SERVER (Devcord) (help-javascript) (bato1359): thanks guys
-[03:41:40] SERVER (Devcord) (offtopic) (MWR): I almost never dream code
-[03:41:56] SERVER (Devcord) (offtopic) (MWR): It's different from person to person
-[03:42:59] SERVER (Devcord) (offtopic) (lost): i sometimes solve issues in my dream
-[03:44:01] SERVER (Devcord) (offtopic) (Mystique): Is React Native just aas bad as Electron?
+ Started on Wed Apr 08 2020 06:19:00 GMT-0400 (Eastern Daylight Time)
+[06:19:01] PASS online
+[06:19:28] SERVER (Devcord) (help-javascript) (James T): Data[val].cf
+[06:19:40] SERVER (Devcord) (help-javascript) (James T): <@266947686194741248>
+[06:19:56] SERVER (Devcord) (help-javascript) (James T): Variables go in square braces when used as keys on objects
