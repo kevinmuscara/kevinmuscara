@@ -7,7 +7,7 @@ const logger = new Logger('./log/logs.txt');
 const router = require('./routes/routes');
 
 const app  = express();
-const port = 8080;
+const port = 80;
 
 app
 .set('views', path.join(__dirname, 'views'))
