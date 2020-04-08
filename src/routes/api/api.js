@@ -1,39 +1,31 @@
 const express = require('express');
 const router  = new express.Router();
 
+const data = require('covidtracker');
 const request = require('request');
 
 router.get('/', async(req, res) => {
-    res.json({ "status": "Not found" });
-});
+    const message = JSON.stringify({ "status": "online" });
+    res.render('message', {
+        msg: message
+    });
+})
 
 router.get('/player/:username', async(req, res) => {
     request.get(`https://api.slothpixel.me/api/players/${req.params.username}`, function(error, response, body) {
-        res.json({ body });
+        res.render('message', {
+            msg: JSON.stringify(body)
+        });
     });
 });
 
 router.get('/bans', async(req, res) => {
     request.get(`https://api.slothpixel.me/api/bans`, function(error, response, body) {
-        res.json({ body });
-    });
-});
-
-router.get('/corona', async(req, res) => {
-    request.get(`http://coronavirusapi.com/getTimeSeriesJson/KY/`, function(error, response, body) {
-        const data = JSON.parse(body);
-
-        const deaths   = data[data.length - 1].deaths;
-        const positive = data[data.length - 1].positive;
-        const tested   = data[data.length - 1].tested;
-
-        res.json({ 
-            "confirmedCases": positive,
-            "totalTested": tested,
-            "totalDeaths": deaths 
+        res.render('message', {
+            msg: JSON.stringify(body)
         });
     });
-})
+});
 
 router.get('/health', async(req, res) => {
     String.prototype.toHHMMSS = function() {
@@ -53,9 +45,82 @@ router.get('/health', async(req, res) => {
     const uptime = (time + "").toHHMMSS();
 
 
-    res.json({
-        "status": "online",
-        "uptime": uptime
+    const message = JSON.stringify({ "status": "online", "uptime": uptime });
+
+    res.render('message', {
+        msg: message
+    });
+});
+
+router.get('/corona', async(req, res) => {
+    let world = await data.getAll();
+    const message = JSON.stringify({ "deaths": world.deaths, "confirmedCases": world.cases, "totalRecovered": world.recovered});
+    res.render('message', {
+        msg: message
+    });
+});
+
+router.get('/corona/:country', async(req, res) => {
+    let country = await data.getCountry({ country: req.params.country });
+    const message = JSON.stringify({ "deaths": country.deaths, "confirmedCases": country.cases, "totalRecovered": country.recovered});
+    res.render('message', {
+        msg: message
+    });
+});
+
+router.get('/corona/:country/deaths', async(req, res) => {
+    let country = await data.getCountry({ country: req.params.country });
+    const message = JSON.stringify({ "deaths": country.deaths });
+    res.render('message', {
+        msg: message
+    });
+});
+
+router.get('/corona/:country/confirmedCases', async(req, res) => {
+    let country = await data.getCountry({ country: req.params.country });
+    const message = JSON.stringify({ "confirmedCases": country.cases });
+    res.render('message', {
+        msg: message
+    });
+});
+
+router.get('/corona/:country/totalRecovered', async(req, res) => {
+    let country = await data.getCountry({ country: req.params.country });
+    const message = JSON.stringify({ "totalRecovered": country.recovered });
+    res.render('message', {
+        msg: message
+    });
+});
+
+router.get('/corona/:country/:state', async(req, res) => {
+    let state = await data.getState({ state: req.params.state });
+    const message = JSON.stringify({ "deaths": state.deaths, "confirmedCases": state.cases, "totalRecovered": state.recovered });
+    res.render('message', {
+        msg: message
+    });
+});
+
+router.get('/corona/:country/:state/deaths', async(req, res) => {
+    let state = await data.getState({ state: req.params.state });
+    const message = JSON.stringify({ "deaths": state.deaths });
+    res.render('message', {
+        msg: message
+    });
+});
+
+router.get('/corona/:country/:state/confirmedCases', async(req, res) => {
+    let state = await data.getState({ state: req.params.state });
+    const message = JSON.stringify({ "confirmedCases": state.cases });
+    res.render('message', {
+        msg: message
+    });
+});
+
+router.get('/corona/:country/:state/totalRecovered', async(req, res) => {
+    let state = await data.getState({ state: req.params.state });
+    const message = JSON.stringify({ "totalRecovered": state.recovered });
+    res.render('message', {
+        msg: message
     });
 });
 

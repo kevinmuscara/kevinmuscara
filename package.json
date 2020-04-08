@@ -13,6 +13,8 @@
     "big-integer": "^1.6.48",
     "body-parser": "^1.19.0",
     "chalk": "^3.0.0",
+    "covid19-api": "^1.1.8",
+    "covidtracker": "^1.1.0",
     "crypto": "^1.0.1",
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
