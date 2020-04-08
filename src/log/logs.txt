@@ -1,21 +1,2 @@
- Started on Wed Apr 08 2020 09:11:54 GMT-0400 (Eastern Daylight Time)
-[09:11:54] PASS online
-[09:11:55] SERVER (Devcord) (offtopic) (Banou): mine already covers keyboard & mouse
-[09:11:56] SERVER (Devcord) (offtopic) (neo): especially for playing csgo
-[09:11:57] SERVER (Devcord) (offtopic) (lost): yeah
-[09:12:02] SERVER (Devcord) (offtopic) (Banou): but it doesn't have much space left for the mouse
-[09:12:11] SERVER (Devcord) (offtopic) (☘ Roi Chan3x): ja larger is better
-[09:12:12] SERVER (Devcord) (offtopic) (Elvanos): <@!342948106985537539> only people using VIM get carpal tunnel because they never take their hands off the keyboard <:troll_devcord:377394372834230273>
-[09:12:15] SERVER (Devcord) (help-backend) (pvtHenk): so like I said, traditionally that'd be a user id, perhaps some basic info like email, first name, last name, whatever. And then a list of permissions/roles
-[09:12:19] SERVER (Devcord) (offtopic) (Banou): thats what she said
-[09:12:39] SERVER (Devcord) (help-backend) (Valentin): Yeah, that's the default in most cases
-[09:12:42] SERVER (Devcord) (help-backend) (pvtHenk): Like honestly, I never implement my own user systems anymore haha
-[09:12:48] SERVER (Devcord) (offtopic) (Elvanos): She must have lost many lovers to the carpal syndrome then; poor lady.
-[09:13:10] SERVER (Devcord) (help-backend) (pvtHenk): I just rely on 3rd party stuff to do all of that, like Keycloak, AWS Cognito, Auth0,.....
-[09:13:38] SERVER (Devcord) (offtopic) (lost): i guess i might also need a bigger mouse mat lmao
-[09:13:42] SERVER (Devcord) (help-backend) (pvtHenk): they deal with all the login stuff, and I deal with all of the application stuff :)
-[09:13:43] SERVER (Devcord) (offtopic) (☘ Roi Chan3x): lady gaga is not poor
-[09:13:50] SERVER (Devcord) (offtopic) (lost): my mouse is always top left corner, or i move my mat further up
-[09:13:51] SERVER (Devcord) (offtopic) (lost): mhhhh
-[09:13:59] SERVER (Devcord) (help-backend) (Valentin): Well that's something i would use if it was my company business as they would pay
-[09:14:07] SERVER (Devcord) (help-backend) (pvtHenk): Keycloak is free
+ Started on Wed Apr 08 2020 09:32:34 GMT-0400 (Eastern Daylight Time)
+[09:32:34] PASS online
