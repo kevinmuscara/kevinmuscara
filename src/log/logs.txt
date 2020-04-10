@@ -1,43 +1,20 @@
- Started on Fri Apr 10 2020 17:09:23 GMT-0400 (Eastern Daylight Time)
-[17:09:23] PASS online
-[17:09:34] SERVER (Devcord) (help-javascript) (S3BAS): Actually, I think you're misunderstanding how the lifecycle of react works perhaps?
-[17:09:40] SERVER (Devcord) (offtopic) (ewiggle): Vim people seem to like it a lot so it kind of came with the territory and I just ended up learning a bit of that as well
-[17:09:47] SERVER (Devcord) (help-javascript) (malik): <@!92644666956070912> On what you've said, you know I have to like empty the list before another request else imma get duplicate value
-[17:09:54] SERVER (Devcord) (help-javascript) (S3BAS): Each time you call `setState` the component will go through some cycle, of which 1 of these is calling `componentDidUpdate`
-[17:10:00] SERVER (Devcord) (help-javascript) (neo): ok here is what you do
-[17:10:05] SERVER (Devcord) (help-javascript) (neo): you explain your question nicely
-[17:10:17] SERVER (Devcord) (help-javascript) (neo): and then you show us what you have right now
-[17:10:19] SERVER (Devcord) (offtopic) (ewiggle): Coolest thing about tnux is saving a session and basically letting several people edit and see the same terminal at the same time, like a screen share
-[17:10:40] SERVER (Devcord) (help-javascript) (malik): Okay, I will just try the Stringify method rn
-[17:10:43] SERVER (Devcord) (help-javascript) (MWR): at this point your question is so fragmented it's impossible lmfao
-[17:10:43] SERVER (Devcord) (help-javascript) (neo): your question should also tell what your goal is
-[17:10:55] SERVER (Devcord) (help-javascript) (S3BAS): > On what you've said, you know I have to like empty the list before another request else imma get duplicate value
-You can just overwrite the state, which is what you're supposed to do anyways, but that's a seperate issue besides the infinite looping
-[17:11:54] SERVER (Devcord) (help-javascript) (neo): ```
-Here is what i want to do:
-Here is what i tried doing: 
-Here is why i expected it to work (optional)
-Here is some more info and then some more info 
-Here is my code
-```
-ez help desk service 🙂
-[17:12:14] SERVER (Devcord) (offtopic) (ewiggle): Aside from that, vim has comparable screen splitting
-[17:12:26] SERVER (Devcord) (help-javascript) (MWR): tora big gay with his upvote reactions
-[17:12:29] SERVER (Devcord) (help-javascript) (S3BAS): Idk what you're on about, the issue at hand is the infinite looping which is caused by `setState` in `componentDidUpdate` no?
-[17:12:33] SERVER (Devcord) (help-javascript) (S3BAS): What's not clear about that
-[17:13:02] SERVER (Devcord) (offtopic) (ewiggle): Haven't messed with many tmux plugins yet though
-[17:13:14] SERVER (Devcord) (help-javascript) (neo): i get that, but why is he doing it this way, what does he want to do, why does not want to use tora's thing for comparing array etc etc
-[17:13:27] SERVER (Devcord) (help-javascript) (S3BAS): He just said he'll use Stringify
-[17:13:32] SERVER (Devcord) (help-javascript) (ToRA): there's too much info behind closed doors
-[17:13:36] SERVER (Devcord) (webtopic) (Saghen): yo with the bash language support you can gold things
-[17:13:36] SERVER (Devcord) (offtopic) (chimp): how'd u initially get into vim, `vimtutor`?
-[17:13:43] SERVER (Devcord) (webtopic) (Saghen): ```bash
-$jajajaja
-```
-[17:13:47] SERVER (Devcord) (help-javascript) (neo): > On what you've said, you know I have to like empty the list before another request else imma get duplicate value
-[17:13:49] SERVER (Devcord) (help-javascript) (ToRA): we should try to make sure this isnt an XY problem
-[17:13:52] SERVER (Devcord) (help-javascript) (neo): he also said this just after that
-[17:13:59] SERVER (Devcord) (help-javascript) (malik): 1. I am trying to fetch the latest updates from the API
-2. I have tried comparing the current state of the users with prevState (even using Stringify as Tora suggested)
-4. I think componentDidUpdate() is the best way to do it
-[17:14:11] SERVER (Devcord) (offtopic) (ewiggle): YouTube
+ Started on Fri Apr 10 2020 18:29:12 GMT-0400 (Eastern Daylight Time)
+[18:29:12] PASS online
+[18:30:44] SERVER (Devcord) (help-frontend) (Enchant™): Do you mean that I just went straight to the secondpage.php?
+[18:31:15] SERVER (Devcord) (help-frontend) (Enchant™): That I have to start from the index.php and input a 16 digit number
+[18:31:24] SERVER (Devcord) (help-frontend) (ToRA): yes
+[18:31:29] SERVER (Devcord) (help-frontend) (Enchant™): I tried this
+[18:31:58] SERVER (Devcord) (help-frontend) (ToRA): oh
+[18:31:59] SERVER (Devcord) (help-frontend) (ToRA): jeez
+[18:32:06] SERVER (Devcord) (help-frontend) (ToRA): you need the `;`
+[18:33:20] SERVER (Devcord) (help-frontend) (Enchant™): https://cdn.discordapp.com/attachments/496820557627654174/698299604139114496/unknown.png
+[18:33:44] SERVER (Devcord) (help-frontend) (ToRA): good. this is a good practice
+[18:33:57] SERVER (Devcord) (help-frontend) (ToRA): that way you always know what is in POST
+[18:34:11] SERVER (Devcord) (help-frontend) (Enchant™): This is very good
+[18:34:29] SERVER (Devcord) (help-frontend) (ToRA): ah i see your issue
+[18:34:34] SERVER (Devcord) (help-frontend) (ToRA): `isset ($_POST['cardNum'])`
+[18:34:37] SERVER (Devcord) (help-frontend) (ToRA): syntax issue
+[18:34:40] SERVER (Devcord) (help-frontend) (ToRA): but, again
+[18:34:49] SERVER (Devcord) (help-frontend) (ToRA): this is a PHP issue
+[18:35:06] SERVER (Devcord) (help-design) (The Smasher): <:wot_devcord:403222108504588290>
+[18:35:39] SERVER (Devcord) (help-design) (ToRA): https://coolors.co/
