@@ -19,20 +19,22 @@ router.get('/covid', async(req, res) => {
     let state = await data.getState({ state: 'Kentucky' });
     JSON.stringify(state);
     
+    let name = state.state;
     let cases = state.cases;
     let todayCases = state.todayCases;
     let deaths = state.deaths;
     let todayDeaths = state.todayDeaths;
-    let active = state.active;
-    let tests = state.tests;
+    let pactive = state.active / state.cases;
+    let pdeaths = state.deaths / state.cases;
 
     res.render('covid',{
+        state: name,
         cases: cases,
         todayCases: todayCases,
         deaths: deaths,
         todayDeaths: todayDeaths,
-        active: active,
-        tests: tests
+        dead: Math.round(pdeaths * 100),
+        infected: Math.round(pactive * 100)
     });
 });
 

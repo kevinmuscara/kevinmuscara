@@ -1,6 +1,46 @@
-<h1>Cases: <%= cases %>  </h1>
-<h1>New Cases Today: <%= todayCases %>  </h1>
-<h1>Deaths: <%= deaths %>  </h1>
-<h1>New Deaths Today: <%= todayDeaths %>  </h1>
-<h1>Active: <%= active %>  </h1>
-<h1>Total Tests: <%= tests %> </h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Stats</title>
+</head>
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+<body>
+    <table>
+        <tr>
+            <th>State</th>
+            <th>Total Cases</th>
+            <th>New Cases Today</th>
+            <th>Total Deaths</th>
+            <th>New Deaths Today</th>
+            <th>% Infected</th>
+            <th>% Dead</th>
+        </tr>
+        <tr>
+            <td><%= state %></td>
+            <td><%= cases %></td>
+            <td><%= todayCases %></td>
+            <td><%= deaths %></td>
+            <td><%= todayDeaths %></td>
+            <td><%= infected %>%</td>
+            <td><%= dead %>%</td>
+        </tr>
+    </table>
+</body>
+</html>

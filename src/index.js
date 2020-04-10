@@ -10,6 +10,14 @@ const router = require('./routes/routes');
 const app  = express();
 const port = 80;
 
+/**
+ * * Working
+ * ! Not Working
+ * ? Questionable 
+ * TODO: skaldfasdf
+ * @param param
+ */
+
 require('./discord');
 
 app
