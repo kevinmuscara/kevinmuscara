@@ -12,6 +12,13 @@ router.use('/api', api);
 router.use('/doc', docs);
 
 router.get('/', async (req, res) => {
+    const head = req.headers.host;
+    console.log(head);
+    // if(head === 'localhost:801')
+    //     res.render('index');
+    // else if(head === 'abcd.localhost:801')
+    //     res.render('doc');
+
     res.render('index');
 });
 
