@@ -71,7 +71,7 @@ router.get('/player/:username', async(req, res) => {
     if(header === 'api.kevinmuscara.com') {
         request.get(`https://api.slothpixel.me/api/players/${req.params.username}`, function(error, response, body) {
             res.render('message', {
-                msg: JSON.stringify(body)
+                msg: body
             });
         });
     } else if(header === 'kevinmuscara.com') {
