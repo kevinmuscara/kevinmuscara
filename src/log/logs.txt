@@ -1,29 +1,9 @@
- Started on Sat Apr 11 2020 03:04:52 GMT-0400 (Eastern Daylight Time)
-[03:04:52] PASS online
-[03:04:54] DM (pv6q): idk
-[03:05:02] DM (kefin): OH SHIT
-[03:05:06] DM (kefin): abcd.localhost:801
-[03:05:07] DM (kefin): it worked
-[03:05:16] DM (kefin): ok i got headers with express figured out
-[03:05:16] DM (kefin): 😂
-[03:05:58] DM (pv6q): IT WORKED?
-[03:06:05] DM (kefin): yea
-[03:06:05] DM (pv6q): is localhost a domain?
-[03:06:07] DM (kefin): idk
-[03:06:09] DM (kefin): but abcd.localhost
-[03:06:10] DM (kefin): worked
-[03:06:10] DM (pv6q): it must be
-[03:06:11] DM (kefin): 😂
-[03:06:22] DM (pv6q): thats so useful for api testing
-[03:06:28] DM (pv6q): api.localhost is all you need to test
-[03:06:38] DM (kefin): yea
-[03:06:42] DM (pv6q): or even just check the first most domain and see what it see
-[03:06:44] DM (kefin): alright now how do i do routes with it tho
-[03:06:46] DM (kefin): 😂
-[03:06:50] DM (pv6q): idk
-[03:06:54] DM (kefin): lemme figure this out
-[03:07:20] DM (kefin): omg we're retarded
-[03:07:22] DM (kefin): 😂
-[03:07:29] DM (kefin): https://www.npmjs.com/package/express-subdomain
-[03:07:39] DM (pv6q): LMAO
-[03:07:48] DM (pv6q): it does it for us
+ Started on Sat Apr 11 2020 03:22:03 GMT-0400 (Eastern Daylight Time)
+[03:22:03] PASS online
+[03:22:09] SERVER (Devcord) (offtopic) (polarbeer): i think next will  be 98 degrees
+[03:22:15] SERVER (Devcord) (offtopic) (Xing): https://cdn.discordapp.com/attachments/174075418410876928/698432707520364614/c5Kvr66oGvHvgPeCfytE5fSTUOuIAAAAASUVORK5CYII.png
+[03:22:23] SERVER (Devcord) (offtopic) (ToRA): oh god. 98 degrees
+[03:22:26] SERVER (Devcord) (offtopic) (zlotte): Flipsyde was not bad though
+[03:22:31] SERVER (Devcord) (offtopic) (zlotte): Someday
+[03:22:43] SERVER (Devcord) (offtopic) (polarbeer): https://www.youtube.com/watch?v=GQMlWwIXg3M wow
+[03:22:45] SERVER (Devcord) (offtopic) (polarbeer): definitely this one
