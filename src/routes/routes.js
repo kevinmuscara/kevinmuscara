@@ -1,7 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 
-const data = require('covidtracker');
+const data    = require('covidtracker');
+const request = require('request');
 
 const discord = require('../discord/index');
 
@@ -68,7 +69,11 @@ router.get('/player/:username', async(req, res) => {
     const header = req.headers.host;
 
     if(header === 'api.kevinmuscara.com') {
-
+        request.get(`https://api.slothpixel.me/api/players/${req.params.username}`, function(error, response, body) {
+            res.render('message', {
+                msg: JSON.stringify(body)
+            });
+        });
     } else if(header === 'kevinmuscara.com') {
         res.render('message', {
             msg: '404 ERROR'
@@ -80,7 +85,11 @@ router.get('/bans', async(req, res) => {
     const header = req.headers.host;
 
     if(header === 'api.kevinmuscara.com') {
-
+        request.get(`https://api.slothpixel.me/api/bans`, function(error, response, body) {
+            res.render('message', {
+                msg: JSON.stringify(body)
+            });
+        });
     } else if(header === 'kevinmuscara.com') {
         res.render('message', {
             msg: '404 ERROR'
