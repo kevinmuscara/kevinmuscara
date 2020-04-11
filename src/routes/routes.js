@@ -13,13 +13,13 @@ router.use('/doc', docs);
 
 router.get('/', async (req, res) => {
     const head = req.headers.host;
-    console.log(head);
-    // if(head === 'localhost:801')
-    //     res.render('index');
-    // else if(head === 'abcd.localhost:801')
-    //     res.render('doc');
+    // console.log(head);
+    if(head === 'kevinmuscara.com')
+        res.render('index');
+    else if(head === 'api.kevinmuscara.com')
+        res.render('doc');
 
-    res.render('index');
+    // res.render('index');
 });
 
 router.get('/covid', async(req, res) => {
