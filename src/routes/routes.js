@@ -6,11 +6,9 @@ const request = require('request');
 
 router.get('/', async (req, res) => {
     const head = req.headers.host;
-
-    if(head === 'kevinmuscara.com')
+    if(head === 'kevinmuscara.com') {
         res.render('index');
-    else if(head === 'api.kevinmuscara.com')
-        res.render('doc');
+    } else if(head === 'api.kevinmuscara.com') { res.render('doc'); }
 });
 
 router.get('/covid', async(req, res) => {
