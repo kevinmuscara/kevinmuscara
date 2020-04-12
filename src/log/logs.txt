@@ -1,9 +1,2 @@
- Started on Sat Apr 11 2020 03:22:03 GMT-0400 (Eastern Daylight Time)
-[03:22:03] PASS online
-[03:22:09] SERVER (Devcord) (offtopic) (polarbeer): i think next will  be 98 degrees
-[03:22:15] SERVER (Devcord) (offtopic) (Xing): https://cdn.discordapp.com/attachments/174075418410876928/698432707520364614/c5Kvr66oGvHvgPeCfytE5fSTUOuIAAAAASUVORK5CYII.png
-[03:22:23] SERVER (Devcord) (offtopic) (ToRA): oh god. 98 degrees
-[03:22:26] SERVER (Devcord) (offtopic) (zlotte): Flipsyde was not bad though
-[03:22:31] SERVER (Devcord) (offtopic) (zlotte): Someday
-[03:22:43] SERVER (Devcord) (offtopic) (polarbeer): https://www.youtube.com/watch?v=GQMlWwIXg3M wow
-[03:22:45] SERVER (Devcord) (offtopic) (polarbeer): definitely this one
+ Started on Sun Apr 12 2020 10:01:32 GMT-0400 (Eastern Daylight Time)
+[10:01:32] PASS online
