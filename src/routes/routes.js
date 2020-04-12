@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/covid', async(req, res) => {
-    const header = req.headers.host;
+    const header = req.headers.host; 
 
     if(header === 'kevinmuscara.com') {
         let state = await data.getState({ state: 'Kentucky' });
@@ -33,7 +33,8 @@ router.get('/covid', async(req, res) => {
             deaths: deaths,
             todayDeaths: todayDeaths,
             dead: Math.round(pdeaths * 100),
-            infected: Math.round(pactive * 100)
+            infected: Math.round(pactive * 100),
+            recovered: 100 - (Math.round(pdeaths * 100) + Math.round(pactive * 100))
         });
     } else if(header === 'api.kevinmuscara.com') {
         res.render('message', {
