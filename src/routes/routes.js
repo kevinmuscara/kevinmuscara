@@ -4,8 +4,6 @@ const router  = express.Router();
 const data    = require('covidtracker');
 const request = require('request');
 
-const discord = require('../discord/index');
-
 router.get('/', async (req, res) => {
     const head = req.headers.host;
 
@@ -40,21 +38,6 @@ router.get('/covid', async(req, res) => {
             infected: Math.round(pactive * 100)
         });
     } else if(header === 'api.kevinmuscara.com') {
-        res.render('message', {
-            msg: '404 ERROR'
-        });
-    }
-});
-
-router.get('/discord', async (req, res) => {
-    const header = req.headers.host;
-
-    if(header === 'api.kevinmuscara.com') {
-        const message = JSON.stringify({ "status": discord.getStatus(), "ping": discord.getPing() });
-        res.render('message', {
-            msg: message
-        });
-    } else if(header === 'kevinmuscara.com') {
         res.render('message', {
             msg: '404 ERROR'
         });

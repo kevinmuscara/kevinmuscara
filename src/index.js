@@ -18,15 +18,15 @@ const port = 80;
  * @param param
  */
 
-require('./discord');
+// require('./discord');
 
 app
 .set('views', path.join(__dirname, 'views'))
 .set('view engine', 'ejs')
 .use(bodyParser.json())
 .use(bodyParser.urlencoded({ extended : true }))
-.use('/', express.static(path.join(__dirname, './views')))
 .use(express.static(__dirname + '/public'))
+.use('/', express.static(path.join(__dirname, './views')))
 .use('/', router);
 
 const server = app.listen(port, '0.0.0.0', () => {
