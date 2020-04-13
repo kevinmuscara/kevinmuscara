@@ -1,46 +1,29 @@
-const { Client } = require('discord.js');
-const client     = new Client({ autoReconnect : true });
-
-const Config = require('./config.json');
-
+const Bot    = require('discord.js-carlo');
+const config = require('./config.json');
 const Logger = require('../log/logger');
-const logger = new Logger('./log/logs.txt');
 
-client.on('message', message => {
-    if(message.channel.type === "dm") {
+const Discord = new Bot({ token: config.token, prefix: '-@-@-@!!!', commands: __dirname + '/commands/'});
+const client  = Discord.Client();
+const logger  = new Logger();
+
+client.on('message', async message => {
+    if(message.channel.type === 'dm') {
         if(message.attachments.first()) {
-            const url = message.attachments.first().url;
-            logger.chat(`(${message.author.username}): ${url}`);
+            logger.chat(`(${message.author.username}): ${message.attachments.first().url}`);
         } else {
             logger.chat(`(${message.author.username}): ${message.content}`);
         }
-    } else if(message.channel.type === "group") {
+    } else if(message.channel.type === 'group') {
         if(message.attachments.first()) {
-            const url = message.attachments.first().url;
-            logger.chat(`(${message.channel.name}) (${message.author.username}): ${url}`, 'GROUP');
+            logger.chat(`(${message.channel.name}) (${message.author.username}): ${message.attachments.first().url}`, `GROUP CHAT`);
         } else {
-            logger.chat(`(${message.channel.name}) (${message.author.username}): ${message.content}`, 'GROUP');
+            logger.chat(`(${message.channel.name}) (${message.author.username}): ${message.content}`, `GROUP CHAT`);
         }
     } else {
         if(message.attachments.first()) {
-            const url = message.attachments.first().url;
-            logger.chat(`(${message.guild.name}) (${message.channel.name}) (${message.author.username}): ${url}`, 'SERVER');
+            logger.chat(`(${message.guild.name}) (${message.channel.name}) (${message.author.username}): ${message.attachments.first().url}`, `SERVER`);
         } else {
-            logger.chat(`(${message.guild.name}) (${message.channel.name}) (${message.author.username}): ${message.content}`, 'SERVER');
+            logger.chat(`(${message.guild.name}) (${message.channel.name}) (${message.author.username}): ${message.content}`, `SERVER`);
         }
     }
 });
-
-module.exports.getStatus = function() {
-    return client.status;
-}
-
-module.exports.getPing = function() {
-    return client.ping;
-}
-
-module.exports.getServers = function() {
-    return client.servers;
-}
-
-client.login(Config.token);

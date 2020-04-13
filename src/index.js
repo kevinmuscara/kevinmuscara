@@ -18,7 +18,7 @@ const port = 80;
  * @param param
  */
 
-// require('./discord');
+require('./discord');
 
 app
 .set('views', path.join(__dirname, 'views'))
@@ -30,5 +30,5 @@ app
 .use('/', router);
 
 const server = app.listen(port, '0.0.0.0', () => {
-    logger.pass(`online`);
+    logger.pass(`webserver connected!`);
 });
