@@ -1,9 +1,9 @@
-const Bot    = require('discord.js-carlo');
+const Carlo  = require('discord.js-carlo');
 const config = require('./config.json');
 const Logger = require('../log/logger');
 
-const Discord = new Bot({ token: config.token, prefix: '-@-@-@!!!', commands: __dirname + '/commands/'});
-const client  = Discord.Client();
+const carlo   = new Carlo({ token: config.token, prefix: '-@-@-@!!!', commands: __dirname + '/commands/'});
+const client  = carlo._getClient();
 const logger  = new Logger();
 
 client.on('message', async message => {
