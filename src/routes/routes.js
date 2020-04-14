@@ -4,11 +4,77 @@ const router  = express.Router();
 const data    = require('covidtracker');
 const request = require('request');
 
+const post = require('./models/user.model');
+
 router.get('/', async (req, res) => {
     const head = req.headers.host;
     if(head === 'kevinmuscara.com') {
         res.render('index');
     } else if(head === 'api.kevinmuscara.com') { res.render('doc'); }
+});
+
+// Get projects
+router.get('/projects', async(req, res) => {
+    await post.getPosts()
+    .then(posts => res.json(posts))
+    .catch(error => {
+        if(error.status) {
+            res.status(error.status).json({ message: error.message });
+        } else {
+            res.status(500).json({ message: error.message });
+        }
+    });
+});
+
+// Get specific project by id
+router.get('/projects/:id', async(req, res) => {
+    await post.getPost(req.params.id)
+    .then(post => res.json(post))
+    .catch(error => {
+        if(error.status) {
+            res.status(error.status).json({ message: error.message });
+        } else {
+            res.status(500).json({ message: error.message });
+        }
+    });
+});
+
+router.post('/projects/:id', async(req, res) => {
+    await post.getPost(req.params.id)
+    .then(post => res.json(post))
+    .catch(error => {
+        if(error.status) {
+            res.status(error.status).json({ message: error.message });
+        } else {
+            res.status(500).json({ message: error.message });
+        }
+    });
+});
+
+// Update specific project by id
+router.put('/projects/:id', async(req, res) => {
+    await post.updatePost(req.params.id, req.body)
+    .then(post => res.json({
+        mesage: `The post ${id} has been updated`,
+        content: post
+    }))
+    .catch(error => {
+        if(error.status) {
+            res.status(error.status).json({ message: error.message });
+        } else {
+            res.status(500).json({ message: error.message });
+        }
+    });
+});
+
+// Create post
+router.post('/projects', async(req, res) => {
+    await post.createPost(req.body, req.body.id)
+    .then(post => res.status(201).json({
+        message: `The post ${post.id} has been created`,
+        content: post
+    }))
+    .catch(error => res.status(500).json({ message: error.message }));
 });
 
 router.get('/covid', async(req, res) => {
