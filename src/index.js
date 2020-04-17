@@ -1,34 +1,19 @@
-const express    = require('express');
-const bodyParser = require('body-parser');
-const path       = require('path');
+const express = require('express');
+const morgan  = require('morgan');
+const path    = require('path');
 
 const Logger = require('./log/logger');
-const logger = new Logger('./log/logs.txt');
+const logger = new Logger();
 
-const router = require('./routes/routes');
-
-const app  = express();
-const port = 80;
-
-/**
- * * Working
- * ! Not Working
- * ? Questionable 
- * TODO: skaldfasdf
- * @param param
- */
+express()
+ .use(morgan('tiny'))
+ .use(express.json())
+ .use(express.urlencoded({extended:true}))
+ .use(express.static(__dirname + '/public'))
+ .use('/', require('./routes/router'))
+ .use('/', express.static(path.join(__dirname, './views')))
+ .set('views', path.join(__dirname, 'views'))
+ .set('view engine', 'ejs')
+ .listen(80, '0.0.0.0', () => logger.pass('Success app is online'));
 
 require('./discord');
-
-app
-.set('views', path.join(__dirname, 'views'))
-.set('view engine', 'ejs')
-.use(bodyParser.json())
-.use(bodyParser.urlencoded({ extended : true }))
-.use(express.static(__dirname + '/public'))
-.use('/', express.static(path.join(__dirname, './views')))
-.use('/', router);
-
-const server = app.listen(port, '0.0.0.0', () => {
-    logger.pass(`webserver connected!`);
-});
