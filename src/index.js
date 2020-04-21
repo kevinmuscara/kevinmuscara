@@ -1,6 +1,7 @@
-const express = require('express');
-const morgan  = require('morgan');
-const path    = require('path');
+const express  = require('express');
+const morgan   = require('morgan');
+const path     = require('path');
+const mongoose = require('mongoose');
 
 const Logger = require('./log/logger');
 const logger = new Logger();
@@ -17,3 +18,14 @@ express()
  .listen(80, '0.0.0.0', () => logger.pass('App is now online'));
 
 require('./discord');
+
+initDB();
+
+async function initDB() {
+    try {
+        await mongoose.connect('mongodb://localhost/userDatabase', { useNewUrlParser: true, useUnifiedTopology: true });
+        logger.pass(`Connected to DB`);
+    } catch(error) {
+        logger.error(error);
+    }
+};
