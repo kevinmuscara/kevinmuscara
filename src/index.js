@@ -14,6 +14,6 @@ express()
  .use('/', express.static(path.join(__dirname, './views')))
  .set('views', path.join(__dirname, 'views'))
  .set('view engine', 'ejs')
- .listen(80, '0.0.0.0', () => logger.pass('Success app is online'));
+ .listen(80, '0.0.0.0', () => logger.pass('App is now online'));
 
 require('./discord');
